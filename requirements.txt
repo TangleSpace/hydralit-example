@@ -1,0 +1,15 @@
+hydralit
+streamlit >=0.84
+hotstepper
+altair
+pandas
+spacy
+validators
+bokeh
+srsly
+spacy-streamlit
+astroquery
+sunpy
+astropy
+pydeck
+scipy

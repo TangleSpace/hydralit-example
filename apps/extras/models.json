@@ -1,0 +1,23 @@
+{
+  "zh_core_web_sm":"Chinese (zh_core_web_sm)",
+  "zh_core_web_trf":"Chinese (zh_core_web_trf)",
+  "da_core_news_sm":"Danish (da_core_news_sm)",
+  "nl_core_news_sm":"Dutch (nl_core_news_sm)",
+  "en_core_web_sm":"English (en_core_web_sm)",
+  "en_core_web_trf":"English (en_core_web_trf)",
+  "fr_core_news_sm":"French (fr_core_news_sm)",
+  "de_core_news_sm":"German (de_core_news_sm)",
+  "el_core_news_sm":"Greek (el_core_news_sm)",
+  "it_core_news_sm":"Italian (it_core_news_sm)",
+  "ja_core_news_sm":"Japanese (ja_core_news_sm)",
+  "lt_core_news_sm":"Lithuanian (lt_core_news_sm)",
+  "mk_core_news_sm":"Macedonian (mk_core_news_sm)",
+  "nb_core_news_sm":"Norwegian (nb_core_news_sm)",
+  "pl_core_news_sm":"Polish (pl_core_news_sm)",
+  "pl_core_news_md":"Polish (pl_core_news_md)",
+  "pt_core_news_sm":"Portuguese (pt_core_news_sm)",
+  "pt_core_news_md":"Portuguese (pt_core_news_md)",
+  "ro_core_news_sm":"Romanian (ro_core_news_sm)",
+  "ru_core_news_sm":"Russian (ru_core_news_sm)",
+  "es_core_news_sm":"Spanish (es_core_news_sm)"
+}
