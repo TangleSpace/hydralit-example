@@ -1,4 +1,5 @@
 import time
+from typing import Dict
 import streamlit as st
 from hydralit import HydraHeadApp
 
@@ -34,13 +35,14 @@ class LoginApp(HydraHeadApp):
             self._do_login(form_data, c2)
 
 
-    def _create_login_form(self, parent_container):
+    def _create_login_form(self, parent_container) -> Dict:
 
         login_form = parent_container.form(key="login_form")
 
         form_state = {}
         form_state['username'] = login_form.text_input('Username')
         form_state['password'] = login_form.text_input('Password',type="password")
+        form_state['access_level'] = login_form.selectbox('Example Access Level',(1,2))
         form_state['submitted'] = login_form.form_submit_button('Login')
 
         parent_container.write("sample login -> joe & joe")
@@ -48,17 +50,18 @@ class LoginApp(HydraHeadApp):
         return form_state
 
 
-    def _do_login(self, form_data, msg_container):
+    def _do_login(self, form_data, msg_container) -> None:
 
-        if self._check_login(form_data):
+        #access_level=0 Access denied!
+        access_level = self._check_login(form_data)
+
+        if access_level > 0:
             msg_container.success(f"✔️ Login success")
             with st.spinner("🤓 now redirecting to application...."):
                 time.sleep(1)
 
-                #Set global flag, we are allowed in!
-                self.session_state.allow_access = 1
-                #Also, who are we letting in..
-                self.session_state.current_user = form_data['username']
+                #access control uses an int value to allow for levels of permission that can be set for each user, this can then be checked within each app seperately.
+                self.set_access(form_data['access_level'], form_data['username'])
 
                 #Do the kick to the home page
                 self.do_redirect()
@@ -69,10 +72,10 @@ class LoginApp(HydraHeadApp):
             msg_container.error(f"❌ Login unsuccessful, 😕 please check your username and password and try again.")
 
 
-    def _check_login(self, login_data) -> bool:
-        #this method returns True or False indicating the success of verifying the login details provided, for now we accept username jackson with any password.
+    def _check_login(self, login_data) -> int:
+        #this method returns a value indicating the success of verifying the login details provided and the permission level, 1 for default access, 0 no access etc.
 
         if login_data['username'] == 'joe' and login_data['password'] == 'joe':
-            return True
+            return 1
         else:
-            return False
+            return 0
