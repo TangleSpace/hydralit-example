@@ -56,6 +56,7 @@ if __name__ == '__main__':
     #add all your application classes here
     app.add_app("Cheat Sheet", icon="📚", app=apps.CheatApp())
     app.add_app("Sequency Denoising",icon="🔊", app=apps.WalshApp(title='Walsh Data'))
+    app.add_app("Sequency Denoising1",icon="🔊", app=apps.WalshApp(title='Walsh Data'))
     app.add_app("Solar Mach", icon="🛰️", app=apps.SolarMach(title='Solar-MACH'))
 
     #Home button will be in the middle of the nav list now
@@ -75,7 +76,7 @@ if __name__ == '__main__':
     complex_nav = {
         'Home': ['Home'],
         'Intro 🏆': ['Cheat Sheet',"Solar Mach"],
-        'Hotstepper 🔥': ["Sequency Denoising"],
+        'Hotstepper 🔥': ["Sequency Denoising","Sequency Denoising1"],
         'Models 🧩': ["Spacy NLP","Uber Pickups"],
     }
     
