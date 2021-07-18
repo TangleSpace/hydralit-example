@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from hotstepper import Steps,Step
 import hotstepper as hs
+from itertools import chain
 from hotstepper import Sequency
 
 

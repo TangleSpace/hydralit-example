@@ -1,6 +1,3 @@
-import sys
-sys.path.append('..')
-
 from hydralit import HydraApp
 import streamlit as st
 import apps
@@ -19,22 +16,25 @@ if __name__ == '__main__':
     #this is the host application, we add children to it and that's it!
     app = HydraApp(title='Secure Hydralit Data Explorer',favicon="🐙",nav_container=my_container,nav_horizontal=True,hide_streamlit_markers=True)
   
+  #Home button will be in the middle of the nav list now
+    app.add_app("Home", icon="🏠", app=apps.HomeApp(title='Home'),is_home=True)
+
     #add all your application classes here
     app.add_app("Cheat Sheet", icon="📚", app=apps.CheatApp())
     app.add_app("Sequency Denoising",icon="🔊", app=apps.WalshApp(title='Walsh Data'))
     app.add_app("Sequency (Secure)",icon="🔊🔒", app=apps.WalshAppSecure(title='Walsh Secure'))
     app.add_app("Solar Mach", icon="🛰️", app=apps.SolarMach(title='Solar-MACH'))
 
-    #Home button will be in the middle of the nav list now
-    app.add_app("Home", icon="🏠", app=apps.HomeApp(title='Home'),is_home=True) 
+     
 
     app.add_app("Spacy NLP", icon="⌨️", app=apps.SpacyNLP())
     app.add_app("Uber Pickups", icon="🚖", app=apps.UberNYC())
 
+    app.add_app("Solar Mach", icon="🛰️", app=apps.SolarMach(title='Solar-MACH'))
+
     #we want to have secure access for this HydraApp, so we provide a login application
     #optional logout label, can be blank for something nicer!
 
-    #app.add_app("Login", apps.LoginApp(title='Login'),is_login=True,logout_label='Piss Off 🖕')
     app.add_app("Login", apps.LoginApp(title='Login'),is_login=True) 
 
     # If the menu is cluttered, just rearrange it into sections!

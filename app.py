@@ -1,6 +1,3 @@
-import sys
-sys.path.append('..')
-
 from hydralit import HydraApp
 import streamlit as st
 import apps
