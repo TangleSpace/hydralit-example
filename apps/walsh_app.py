@@ -29,7 +29,7 @@ class WalshApp(HydraHeadApp):
 
         try:
             st.title('Sequency Denoising')
-            st.subheader('Source for this quick tutorial on using Sequency methods for denoising step change data can be found in the [Hotstepper documentation](https://hotstepper.readthedocs.io/notebooks/sequency_quickstart.html).')
+            st.subheader('Source for this quick tutorial on using Sequency methods for denoising step change data can be found in the [Hotstepper documentation](https://hotstepper.readthedocs.io/notebooks/sequency_quickstart.html). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
             st.markdown('<br><br>',unsafe_allow_html=True)
 
             df_vq_samp = pd.read_csv(r'https://raw.githubusercontent.com/TangleSpace/hotstepper-data/master/data/vessel_queue.csv',parse_dates=['enter','leave'],dayfirst=True)

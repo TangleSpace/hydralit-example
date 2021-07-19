@@ -23,6 +23,9 @@ class SpacyNLP(HydraHeadApp):
             except (ModuleNotFoundError, ImportError):
                 return ""
 
+        st.subheader('Source for this great app is from the Streamlit gallery [NLP with spaCy](https://github.com/ines/spacy-streamlit-demo). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
+        st.markdown('<br><br>',unsafe_allow_html=True)
+
         st.info(r"Yes, this application will show an error if you don't have the 'en_core_web_sm' Spacy model installed, this was left to show that if an app crashes, it won't affect the HydraApp or the other HydraHeadApps, this app will crash and burn on it's own. If you want to fix the error, just install the missing model with [**python -m spacy download en_core_web_sm**](https://spacy.io/usage)")
         spacy_streamlit.visualize(
             MODELS,

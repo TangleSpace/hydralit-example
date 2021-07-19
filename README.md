@@ -1,5 +1,5 @@
  
- ## Hydralit Examples<img src="./docs/images/hydra.png" alt="drawing" width="50"/>
+ ## Hydralit Examples<img src="https://github.com/TangleSpace/hydralit/raw/main/docs/images/hydra.png" alt="drawing" width="50"/>
 ## [Hydralit package](https://github.com/TangleSpace/hydralit) is a wrapping and template project to combine multiple independant (or somewhat dependant) Streamlit applications into a multi-page application.
 
 Currently the project implements a host application HydraApp and each child application simply needs to be a class deriving from the HydraHeadApp class and implement a single, simple method, run().
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     #we want to have secure access for this HydraApp, so we provide a login application
     #optional logout label, can be blank for something nicer!
-
+    #app.add_app("Login", apps.LoginApp(title='Login'),is_login=True,logout_label='Piss Off 🖕')
     app.add_app("Login", apps.LoginApp(title='Login'),is_login=True) 
 
     # If the menu is cluttered, just rearrange it into sections!
@@ -84,9 +84,10 @@ if __name__ == '__main__':
         'Models 🧩': ["Spacy NLP","Uber Pickups"],
     }
     
-    #add a custom loader for app transitions
+    #optional custom loader for app transitions
     #app.add_loader_app(apps.MyLoadingApp())
 
+    #stil a streamlit application, we can just add stuff directly, it will be there across all applications
     #st.write('**This is completely outside of all HydraApp and HydraHeadApps, we can do whatever we want!** 🤪')
 
     #run with default menu layout

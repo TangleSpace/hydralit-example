@@ -65,11 +65,15 @@ class UberNYC(HydraHeadApp):
                 ]
             ))
 
+        st.subheader('Source for this great app is from the Streamlit gallery [NYC Uber Ridesharing Data](https://github.com/streamlit/demo-uber-nyc-pickups). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
+        st.markdown('<br><br>',unsafe_allow_html=True)
+        
         # LAYING OUT THE TOP SECTION OF THE APP
         row1_1, row1_2 = st.beta_columns((2,3))
 
         with row1_1:
             st.title("NYC Uber Ridesharing Data")
+
             hour_selected = st.slider("Select hour of pickup", 0, 23)
 
         with row1_2:

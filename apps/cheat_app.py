@@ -83,6 +83,9 @@ class CheatApp(HydraHeadApp):
     def _cs_body(self):
         # Magic commands
 
+        st.subheader('Source for this great app is from the Streamlit gallery [Streamlit Cheat Sheet](https://github.com/daniellewisDL/streamlit-cheat-sheet). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
+        st.markdown('<br><br>',unsafe_allow_html=True)
+        
         col1, col2, col3 = st.beta_columns(3)
 
         col1.subheader('Magic commands')
