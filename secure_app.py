@@ -55,4 +55,5 @@ if __name__ == '__main__':
     #app.run()
 
     #if the menu is looking shit, use some sections
+    st.markdown("<h2 style='text-align: center;'>This example was written using the <a href = https://github.com/TangleSpace/hydralit>Hydralit</a> library. Sourecode for this example is located <a href = https://github.com/TangleSpace/hydralit-example>here</a>.</h2>",unsafe_allow_html=True)
     app.run(complex_nav)
