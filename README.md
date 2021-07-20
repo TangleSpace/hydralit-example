@@ -29,19 +29,10 @@ You can run the sample secure app with the commands below. (dummy login details 
 ```bash
 hydralit_example> streamlit run secure_app.py
 ```
-<style>
-.verticalhorizontal {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-</style>
 
-
-<div class="verticalhorizontal">
 <h1><a href="https://hydralit-secure-sample.herokuapp.com/">You can see this example running here</a></h1>
-    <img src="https://github.com/TangleSpace/hydralit-example/raw/main/docs/images/hydralit-secure-example.gif" alt="example" width=80%;/>
-</div>
+<img src="https://github.com/TangleSpace/hydralit-example/raw/main/docs/images/hydralit-secure-example.gif" alt="example" width="80%"/>
+
 The host application code is shown below as an example of how such a multi-page application with authentication and lots of bells and whistles can be created with very little code, yet alot of configuration potential.
 
 
