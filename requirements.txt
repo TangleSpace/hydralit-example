@@ -1,5 +1,5 @@
 hydralit
-streamlit >=0.84
+streamlit >=0.86
 hotstepper
 altair
 pandas

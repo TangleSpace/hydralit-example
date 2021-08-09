@@ -11,7 +11,7 @@ class SpacyNLP(HydraHeadApp):
 
     def run(self):
 
-        code_expander = st.beta_expander('Show App Code')
+        code_expander = st.expander('Show App Code')
         code_expander.code(
 """
 import spacy_streamlit

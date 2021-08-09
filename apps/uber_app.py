@@ -24,7 +24,7 @@ class UberNYC(HydraHeadApp):
 
     def run(self):
 
-        code_expander = st.beta_expander('Show App Code')
+        code_expander = st.expander('Show App Code')
         code_expander.code(
 """
 # Copyright 2018-2019 Streamlit Inc.
@@ -98,7 +98,7 @@ class UberNYC(HydraHeadApp):
         st.markdown('<br><br>',unsafe_allow_html=True)
         
         # LAYING OUT THE TOP SECTION OF THE APP
-        row1_1, row1_2 = st.beta_columns((2,3))
+        row1_1, row1_2 = st.columns((2,3))
 
         with row1_1:
             st.title("NYC Uber Ridesharing Data")
@@ -117,7 +117,7 @@ class UberNYC(HydraHeadApp):
         data = data[data[DATE_TIME].dt.hour == hour_selected]
 
         # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-        row2_1, row2_2, row2_3, row2_4 = st.beta_columns((2,1,1,1))
+        row2_1, row2_2, row2_3, row2_4 = st.columns((2,1,1,1))
 
         # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
         la_guardia= [40.7900, -73.8700]
@@ -216,7 +216,7 @@ class UberNYC(HydraHeadApp):
         st.markdown('<br><br>',unsafe_allow_html=True)
         
         # LAYING OUT THE TOP SECTION OF THE APP
-        row1_1, row1_2 = st.beta_columns((2,3))
+        row1_1, row1_2 = st.columns((2,3))
 
         with row1_1:
             st.title("NYC Uber Ridesharing Data")
@@ -235,7 +235,7 @@ class UberNYC(HydraHeadApp):
         data = data[data[DATE_TIME].dt.hour == hour_selected]
 
         # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-        row2_1, row2_2, row2_3, row2_4 = st.beta_columns((2,1,1,1))
+        row2_1, row2_2, row2_3, row2_4 = st.columns((2,1,1,1))
 
         # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
         la_guardia= [40.7900, -73.8700]

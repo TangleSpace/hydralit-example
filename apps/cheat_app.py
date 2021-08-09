@@ -24,7 +24,7 @@ class CheatApp(HydraHeadApp):
 
     def run(self):
 
-        code_expander = st.beta_expander('Show App Code')
+        code_expander = st.expander('Show App Code')
         code_expander.code(
             """
 \"""
@@ -115,7 +115,7 @@ class CheatApp(HydraHeadApp):
         st.subheader('Source for this great app is from the Streamlit gallery [Streamlit Cheat Sheet](https://github.com/daniellewisDL/streamlit-cheat-sheet). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
         st.markdown('<br><br>',unsafe_allow_html=True)
         
-        col1, col2, col3 = st.beta_columns(3)
+        col1, col2, col3 = st.columns(3)
 
         col1.subheader('Magic commands')
         col1.code('''# Magic commands implicitly `st.write()`
@@ -214,12 +214,12 @@ class CheatApp(HydraHeadApp):
 
         col2.subheader('Lay out your app')
         col2.code('''
-    st.beta_container()
-    st.beta_columns(spec)
-    >>> col1, col2 = st.beta_columns(2)
+    st.container()
+    st.columns(spec)
+    >>> col1, col2 = st.columns(2)
     >>> col1.subheader('Columnisation')
-    st.beta_expander('Expander')
-    >>> with st.beta_expander('Expand'):
+    st.expander('Expander')
+    >>> with st.expander('Expand'):
     >>>     st.write('Juicy deets')
         ''')
 
@@ -357,7 +357,7 @@ class CheatApp(HydraHeadApp):
         st.subheader('Source for this great app is from the Streamlit gallery [Streamlit Cheat Sheet](https://github.com/daniellewisDL/streamlit-cheat-sheet). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
         st.markdown('<br><br>',unsafe_allow_html=True)
         
-        col1, col2, col3 = st.beta_columns(3)
+        col1, col2, col3 = st.columns(3)
 
         col1.subheader('Magic commands')
         col1.code('''# Magic commands implicitly `st.write()`
@@ -456,12 +456,12 @@ class CheatApp(HydraHeadApp):
 
         col2.subheader('Lay out your app')
         col2.code('''
-    st.beta_container()
-    st.beta_columns(spec)
-    >>> col1, col2 = st.beta_columns(2)
+    st.container()
+    st.columns(spec)
+    >>> col1, col2 = st.columns(2)
     >>> col1.subheader('Columnisation')
-    st.beta_expander('Expander')
-    >>> with st.beta_expander('Expand'):
+    st.expander('Expander')
+    >>> with st.expander('Expand'):
     >>>     st.write('Juicy deets')
         ''')
 

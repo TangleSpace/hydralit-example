@@ -21,7 +21,7 @@ class WalshAppSecure(HydraHeadApp):
 
     def run(self):
 
-        code_expander = st.beta_expander('Show App Code')
+        code_expander = st.expander('Show App Code')
         code_expander.code(
 """
 import pandas as pd
@@ -228,7 +228,7 @@ class WalshAppSecure(HydraHeadApp):
                 st.pyplot(fig,clear_figure=True)
             
             else:
-                _,c1,c2 = st.beta_columns([2,2,2])
+                _,c1,c2 = st.columns([2,2,2])
                 c2.image("./resources/lock.png",width=100,)
                 c2.image("./resources/hydra.png",width=100,)
                 c1.error('Sorry {}, you don\'t have enough permission to use this application, check with your local diety for more permission and try again.'.format(username))
@@ -423,7 +423,7 @@ class WalshAppSecure(HydraHeadApp):
                 st.pyplot(fig,clear_figure=True)
             
             else:
-                _,c1,c2 = st.beta_columns([2,2,2])
+                _,c1,c2 = st.columns([2,2,2])
                 c2.image("./resources/lock.png",width=100,)
                 c2.image("./resources/hydra.png",width=100,)
                 c1.error('Sorry {}, you don\'t have enough permission to use this application, check with your local diety for more permission and try again.'.format(username))

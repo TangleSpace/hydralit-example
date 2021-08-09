@@ -6,11 +6,11 @@ import apps
 if __name__ == '__main__':
     #------------all valid container references, do not initilise or page config will not be applied (this is from beta containers, beta, who knew!).
     #my_container = st.sidebar
-    # my_container = st.sidebar.beta_container
-    # my_container = st.sidebar.beta_columns
+    # my_container = st.sidebar.container
+    # my_container = st.sidebar.columns
     #my_container = st
-    # my_container = st.beta_container
-    # my_container = st.beta_columns
+    # my_container = st.container
+    # my_container = st.columns
     my_container = None
 
     #this is the host application, we add children to it and that's it!
@@ -45,7 +45,8 @@ if __name__ == '__main__':
         'Hotstepper 🔥': ["Sequency Denoising","Sequency (Secure)"],
         'Models 🧩': ["Spacy NLP","Uber Pickups"],
     }
-    
+
+
     #add a custom loader for app transitions
     #app.add_loader_app(apps.MyLoadingApp())
 
@@ -56,7 +57,7 @@ if __name__ == '__main__':
 
     #if the menu is looking shit, use some sections
     st.markdown("<h2 style='text-align: center;'>This example was written using the <a href = https://github.com/TangleSpace/hydralit>Hydralit</a> library. Sourecode for this example is located <a href = https://github.com/TangleSpace/hydralit-example>here</a>.</h2>",unsafe_allow_html=True)
-    code_expander = st.beta_expander('Show Host Code')
+    code_expander = st.expander('Show Host Code')
     code_expander.code(
       """
 from hydralit import HydraApp
@@ -67,11 +68,11 @@ import apps
 if __name__ == '__main__':
     #------------all valid container references, do not initilise or page config will not be applied (this is from beta containers, beta, who knew!).
     #my_container = st.sidebar
-    # my_container = st.sidebar.beta_container
-    # my_container = st.sidebar.beta_columns
+    # my_container = st.sidebar.container
+    # my_container = st.sidebar.columns
     #my_container = st
-    # my_container = st.beta_container
-    # my_container = st.beta_columns
+    # my_container = st.container
+    # my_container = st.columns
     my_container = None
 
     #this is the host application, we add children to it and that's it!

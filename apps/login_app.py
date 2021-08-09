@@ -25,7 +25,7 @@ class LoginApp(HydraHeadApp):
 
         st.markdown("<h1 style='text-align: center;'>Secure Hydralit Login</h1>", unsafe_allow_html=True)
 
-        code_expander = st.beta_expander('Show App Code')
+        code_expander = st.expander('Show App Code')
         code_expander.code(
             """
 import time
@@ -55,7 +55,7 @@ class LoginApp(HydraHeadApp):
 
         st.markdown("<h1 style='text-align: center;'>Secure Hydralit Login</h1>", unsafe_allow_html=True)
 
-        c1,c2,c3 = st.beta_columns([2,2,2])
+        c1,c2,c3 = st.columns([2,2,2])
         c3.image("./resources/lock.png",width=100,)
         c3.image("./resources/hydra.png",width=100,)
         
@@ -112,7 +112,7 @@ class LoginApp(HydraHeadApp):
             """
         )
 
-        c1,c2,c3 = st.beta_columns([2,2,2])
+        c1,c2,c3 = st.columns([2,2,2])
         c3.image("./resources/lock.png",width=100,)
         c3.image("./resources/hydra.png",width=100,)
         

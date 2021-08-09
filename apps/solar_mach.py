@@ -18,7 +18,7 @@ class SolarMach(HydraHeadApp):
 
     def run(self):
 
-        code_expander = st.beta_expander('Show App Code')
+        code_expander = st.expander('Show App Code')
         code_expander.code(
 """
 import datetime
@@ -47,13 +47,13 @@ class SolarMach(HydraHeadApp):
         st.markdown('## Multi-spacecraft longitudinal configuration plotter')
 
         # provide date and time
-        with st.sidebar.beta_container():
+        with st.sidebar.container():
             d = st.sidebar.date_input("Select date", datetime.date.today()-datetime.timedelta(days = 2))
             t = st.sidebar.time_input('Select time', datetime.time(1, 30))
             date = datetime.datetime.combine(d, t).strftime("%Y-%m-%d %H:%M:%S")
 
         # plotting settings
-        with st.sidebar.beta_container():
+        with st.sidebar.container():
             st.sidebar.subheader('Plot options:')
             plot_spirals = st.sidebar.checkbox('Parker spiral for each body', value=True)
             plot_sun_body_line = st.sidebar.checkbox('Straight line from Sun to body', value=True)
@@ -62,7 +62,7 @@ class SolarMach(HydraHeadApp):
 
             plot_reference = st.sidebar.checkbox('Plot reference (e.g. flare)', value=True)
 
-            with st.sidebar.beta_expander("Reference coordinates (e.g. flare)", expanded=plot_reference):
+            with st.sidebar.expander("Reference coordinates (e.g. flare)", expanded=plot_reference):
                 reference_sys = st.radio('Coordinate system:', ['Carrington', 'Stonyhurst'], index=0)
                 if reference_sys == 'Carrington':
                     reference_long = st.slider('Longitude:', 0, 360, 20)
@@ -82,7 +82,7 @@ class SolarMach(HydraHeadApp):
                 reference_lat = None
 
         st.sidebar.subheader('Choose bodies/spacecraft and measured solar wind speeds')
-        with st.sidebar.beta_container():
+        with st.sidebar.container():
             full_body_list = \
                 st.sidebar.text_area('Bodies/spacecraft (scroll down for example list)',
                                     'STEREO A, Earth, BepiColombo, PSP, Solar Orbiter, Mars',
@@ -184,7 +184,7 @@ class SolarMach(HydraHeadApp):
                     [J. Gieseler](https://jgieseler.github.io) (University of Turku, Finland). \
                     [**Get in contact**](mailto:jan.gieseler@utu.fi?subject=Solar-MACH).')
 
-        col1, col2 = st.beta_columns((5,1))
+        col1, col2 = st.columns((5,1))
         col1.markdown("The development of the online tool has received funding from the \
                     European Union's Horizon 2020 research and innovation programme \
                     under grant agreement No 101004159 (SERPENTINE).")
@@ -205,13 +205,13 @@ class SolarMach(HydraHeadApp):
         st.markdown('## Multi-spacecraft longitudinal configuration plotter')
 
         # provide date and time
-        with st.sidebar.beta_container():
+        with st.sidebar.container():
             d = st.sidebar.date_input("Select date", datetime.date.today()-datetime.timedelta(days = 2))
             t = st.sidebar.time_input('Select time', datetime.time(1, 30))
             date = datetime.datetime.combine(d, t).strftime("%Y-%m-%d %H:%M:%S")
 
         # plotting settings
-        with st.sidebar.beta_container():
+        with st.sidebar.container():
             st.sidebar.subheader('Plot options:')
             plot_spirals = st.sidebar.checkbox('Parker spiral for each body', value=True)
             plot_sun_body_line = st.sidebar.checkbox('Straight line from Sun to body', value=True)
@@ -220,7 +220,7 @@ class SolarMach(HydraHeadApp):
 
             plot_reference = st.sidebar.checkbox('Plot reference (e.g. flare)', value=True)
 
-            with st.sidebar.beta_expander("Reference coordinates (e.g. flare)", expanded=plot_reference):
+            with st.sidebar.expander("Reference coordinates (e.g. flare)", expanded=plot_reference):
                 reference_sys = st.radio('Coordinate system:', ['Carrington', 'Stonyhurst'], index=0)
                 if reference_sys == 'Carrington':
                     reference_long = st.slider('Longitude:', 0, 360, 20)
@@ -240,7 +240,7 @@ class SolarMach(HydraHeadApp):
                 reference_lat = None
 
         st.sidebar.subheader('Choose bodies/spacecraft and measured solar wind speeds')
-        with st.sidebar.beta_container():
+        with st.sidebar.container():
             full_body_list = \
                 st.sidebar.text_area('Bodies/spacecraft (scroll down for example list)',
                                     'STEREO A, Earth, BepiColombo, PSP, Solar Orbiter, Mars',
@@ -342,7 +342,7 @@ class SolarMach(HydraHeadApp):
                     [J. Gieseler](https://jgieseler.github.io) (University of Turku, Finland). \
                     [**Get in contact**](mailto:jan.gieseler@utu.fi?subject=Solar-MACH).')
 
-        col1, col2 = st.beta_columns((5,1))
+        col1, col2 = st.columns((5,1))
         col1.markdown("The development of the online tool has received funding from the \
                     European Union's Horizon 2020 research and innovation programme \
                     under grant agreement No 101004159 (SERPENTINE).")
