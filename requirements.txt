@@ -1,3 +1,4 @@
+compress_pickle
 hydralit >=1.0.7
 hydralit_components >=1.0.3
 streamlit >=0.86
