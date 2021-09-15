@@ -7,3 +7,4 @@ from apps.spacy_nlp import SpacyNLP
 from apps.uber_app import UberNYC
 from apps.cheat_app import CheatApp
 from apps.myloading_app import MyLoadingApp
+from apps.signup import SignUpApp

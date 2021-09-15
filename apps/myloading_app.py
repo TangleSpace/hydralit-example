@@ -1,4 +1,3 @@
-import time
 import streamlit as st
 from hydralit import HydraHeadApp
 
@@ -8,8 +7,7 @@ class MyLoadingApp(HydraHeadApp):
     def run(self,app_target):
 
         try:
-            with st.spinner("🦃 you can just wait, turkey...."):
-                time.sleep(2)
+            with st.spinner("✨ this is a custom loading app, you can create your own, loading...."):
                 app_target.run()
       
         except Exception as e:
