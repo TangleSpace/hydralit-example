@@ -55,6 +55,11 @@ class LoginApp(HydraHeadApp):
 
         parent_container.write("sample login -> joe & joe")
 
+        if parent_container.button('Guest Login',key='guestbtn'):
+            # set access level to a negative number to allow a kick to the unsecure_app set in the parent
+            self.set_access(1, 'guest')
+            self.do_redirect()
+
         if parent_container.button('Sign Up',key='signupbtn'):
             # set access level to a negative number to allow a kick to the unsecure_app set in the parent
             self.set_access(-1, 'guest')

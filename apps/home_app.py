@@ -19,10 +19,13 @@ class HomeApp(HydraHeadApp):
         #st.experimental_set_query_params(selected=self.title)
 
         try:
+            st.markdown("<h1 style='text-align:center;padding: 0px 0px;color:black;font-size:200%;'>Home</h1>",unsafe_allow_html=True)     
+            st.markdown("<h2 style='text-align: center;'>This example was written using the <a href = https://github.com/TangleSpace/hydralit>Hydralit</a> library. Sourecode for this example is located <a href = https://github.com/TangleSpace/hydralit-example>here</a>.</h2>",unsafe_allow_html=True)
+
             col_header_logo_left_far, col_header_logo_left,col_header_text,col_header_logo_right,col_header_logo_right_far = st.columns([1,2,2,2,1])
             
-            col_header_logo_right_far.image(os.path.join(".","resources","hydra.png"),width=100,)
-            col_header_text.title('**Hydralit Explorer Home**')     
+            #col_header_logo_right_far.image(os.path.join(".","resources","hydra.png"),width=100,)
+
             if col_header_text.button('This will open a new tab and go'):
                 self.do_redirect("https://hotstepper.readthedocs.io/index.html")
 

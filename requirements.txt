@@ -1,12 +1,8 @@
 compress_pickle
-hydralit >=1.0.7
+hydralit >=1.0.8
 hydralit_components >=1.0.3
 streamlit >=0.86
-<<<<<<< HEAD
-numpy ==1.20
-=======
 numpy==1.20
->>>>>>> 1a0febc488eed27015b2433305832f4151470a8e
 hotstepper
 altair
 pandas

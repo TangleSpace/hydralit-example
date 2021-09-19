@@ -1,4 +1,5 @@
 import time
+import os
 from typing import Dict
 import streamlit as st
 from hydralit import HydraHeadApp
@@ -39,7 +40,22 @@ class SignUpApp(HydraHeadApp):
         """
         c2.markdown(pretty_btn,unsafe_allow_html=True)
         
+        if 'MSG' in os.environ.keys():
+            st.info(os.environ['MSG'])
+            
         form_data = self._create_signup_form(c2)
+
+        pretty_btn = """
+        <style>
+        div[class="row-widget stButton"] > button {
+            width: 100%;
+        }
+        </style>
+        <br><br>
+        """
+        c2.markdown(pretty_btn,unsafe_allow_html=True)
+
+
 
         if form_data['submitted']:
             self._do_signup(form_data, c2)
@@ -55,6 +71,13 @@ class SignUpApp(HydraHeadApp):
         form_state['password2'] = login_form.text_input('Confirm Password',type="password")
         form_state['access_level'] = login_form.selectbox('Example Access Level',(1,2))
         form_state['submitted'] = login_form.form_submit_button('Sign Up')
+
+        if parent_container.button('Login',key='loginbtn'):
+            # set access level to a negative number to allow a kick to the unsecure_app set in the parent
+            self.set_access(0, None)
+
+            #Do the kick to the signup app
+            self.do_redirect()
 
         return form_state
 
