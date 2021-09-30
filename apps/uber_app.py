@@ -29,6 +29,7 @@ class UberNYC(HydraHeadApp):
     def run(self):
 
         #st.experimental_set_query_params(selected=self.title)
+        print(self.title)
 
         # LOADING DATA
         DATE_TIME = "date/time"

@@ -1,16 +1,16 @@
-from loaders.loaders import point_line
 import time
 import streamlit as st
 from hydralit import HydraHeadApp
-from loaders import hydralit_spinner, Loaders
+from hydralit_components import HyLoader, Loaders
 
 
 class MyLoadingApp(HydraHeadApp):
 
-    def __init__(self, title = 'Loader', delay=0, **kwargs):
+    def __init__(self, title = 'Loader', delay=0,loader=Loaders.standard_loaders, **kwargs):
         self.__dict__.update(kwargs)
         self.title = title
         self.delay = delay
+        self._loader = loader
 
     def run(self,app_target):
 
@@ -19,9 +19,19 @@ class MyLoadingApp(HydraHeadApp):
             if hasattr(app_target,'title'):
                 app_title = app_target.title
             
-            with hydralit_spinner("✨ This is a custom loading app, now loading {}".format(app_title), loader_name=Loaders.showcase):
-                time.sleep(int(self.delay))
+            if app_title == 'Sequency Denoising':
+                with HyLoader("✨Now loading {}".format(app_title), loader_name=Loaders.pacman):
+                    time.sleep(int(self.delay))
+                    app_target.run()
+
+            elif app_title == 'Loader Playground':
                 app_target.run()
+            else:
+                with HyLoader("✨Now loading {}".format(app_title), loader_name=self._loader,index=[3,0,5]):
+                    time.sleep(int(self.delay))
+                    app_target.run()
+
+
       
         except Exception as e:
             st.image("./resources/failure.png",width=100,)

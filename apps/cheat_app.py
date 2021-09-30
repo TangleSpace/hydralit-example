@@ -27,13 +27,8 @@ class CheatApp(HydraHeadApp):
         self.title = title
         
     def run(self):
-
-        #st.experimental_set_query_params(selected=self.title)
         self._cs_sidebar()
         self._cs_body()
-
-        return None
-
 
 
     # sidebar

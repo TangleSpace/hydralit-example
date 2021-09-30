@@ -18,8 +18,6 @@ class SolarMach(HydraHeadApp):
         self.title = title
 
     def run(self):
-
-        #st.experimental_set_query_params(selected=self.title)
         
         st.title('Solar-MACH')
         st.subheader('Source for this great app is from the Streamlit gallery [Solar-MACH](https://github.com/jgieseler/Solar-MACH). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
