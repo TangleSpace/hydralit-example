@@ -27,6 +27,7 @@ class CheatApp(HydraHeadApp):
         self.title = title
         
     def run(self):
+
         self._cs_sidebar()
         self._cs_body()
 

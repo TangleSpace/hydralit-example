@@ -9,6 +9,7 @@ from astropy.coordinates import SkyCoord
 from sunpy.coordinates import frames
 
 from apps.extras.backmapping import *
+import hydralit_components as hc
 
 
 class SolarMach(HydraHeadApp):
@@ -20,6 +21,7 @@ class SolarMach(HydraHeadApp):
     def run(self):
         
         st.title('Solar-MACH')
+
         st.subheader('Source for this great app is from the Streamlit gallery [Solar-MACH](https://github.com/jgieseler/Solar-MACH). An example of how easy it is to convert an existing application and use within a Hydralit multi-page application, see the secret saurce [here] (https://github.com/TangleSpace/hydralit).')
         st.markdown('<br><br>',unsafe_allow_html=True)
         st.markdown('## Multi-spacecraft longitudinal configuration plotter')

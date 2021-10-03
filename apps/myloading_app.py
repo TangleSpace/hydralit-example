@@ -15,12 +15,38 @@ class MyLoadingApp(HydraHeadApp):
     def run(self,app_target):
 
         try:
+
+            se_loader_txt = """
+            <style> 
+#rcorners1 {
+  border-radius: 25px;
+  background: grey;
+  color: #00000;
+  alignment: center;
+  opacity: 0.95;
+  padding: 20px; 
+  width: 1920px;
+  height: 400px; 
+  z-index: 9998; 
+}
+#banner {
+  color: white;
+  vertical-align: text-top;
+  text-align: center;
+  z-index: 9999; 
+}
+</style>
+<div id="rcorners1">
+<h1 id="banner">Now loading Sequency Denoising</h1>
+<br>
+</div>
+            """
             app_title = ''
             if hasattr(app_target,'title'):
                 app_title = app_target.title
             
             if app_title == 'Sequency Denoising':
-                with HyLoader("✨Now loading {}".format(app_title), loader_name=Loaders.pacman):
+                with HyLoader(se_loader_txt, loader_name=Loaders.pacman):
                     time.sleep(int(self.delay))
                     app_target.run()
 

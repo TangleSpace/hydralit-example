@@ -1,4 +1,5 @@
 from hydralit import HydraApp
+import hydralit_components as hc
 import apps
 import streamlit as st
 

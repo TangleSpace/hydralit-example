@@ -29,7 +29,7 @@ class HomeApp(HydraHeadApp):
 
             _,_,col_logo, col_text,_ = st.columns(MENU_LAYOUT)
             col_logo.image(os.path.join(".","resources","data.png"),width=80,)
-            col_text.subheader("This explorer has multiple applications, each application could be run individually, however where is the fun in that? Below is a sample home page that has redirection buttons within the content to jump to a particular app, or you can use the navigation menu at the top.")
+            col_text.subheader("This explorer has multiple applications, each application could be run individually, however where is the fun in that? Below is a sample home page.")
 
             st.markdown('<br><br>',unsafe_allow_html=True)
 
